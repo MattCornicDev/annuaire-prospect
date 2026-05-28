@@ -6,22 +6,13 @@ export async function GET() {
 
     const res = await fetch(url, {
       headers: {
-        Authorization: `Bearer ${process.env.IINSEE_API_KEY}`,
+        Authorization: `Bearer ${process.env.INSEE_API_KEY}`,
       },
     });
 
     const data = await res.json();
 
-    const formatted = data.etablissements.map((e: any) => ({
-      _displayName: e.uniteLegale.denominationUniteLegale,
-      adresseEtablissement: e.adresseEtablissement,
-      siret: e.siret,
-      website: null,
-      email: null,
-      phone: null,
-    }));
-
-    return NextResponse.json(formatted);
+    return NextResponse.json(data);
   } catch (err) {
     return NextResponse.json({ error: "Erreur API" }, { status: 500 });
   }
