@@ -7,7 +7,7 @@ export async function GET() {
 
     const res = await fetch(url, {
       headers: {
-        Authorization: `Bearer ${process.env.INSEE_TOKEN}`,
+        Authorization: `Bearer ${process.env.IINSEE_API_KEY}`,
       },
     });
 
