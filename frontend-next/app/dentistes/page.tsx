@@ -38,7 +38,7 @@ export default function DentistesPage() {
       return;
     }
 
-    fetch("http://localhost:3000/api/dentistes")
+    fetch("/api/dentistes")
       .then((res) => res.json())
       .then((d) => {
         setData(d);
