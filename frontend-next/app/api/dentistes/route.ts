@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const url = `https://api.insee.fr/api-sirene/3.11/siret?q=codePostalEtablissement:59* AND (denominationUniteLegale:DENT* OR nomUniteLegale:DENT*)&nombre=1000`;
+    const url = "https://api.insee.fr/api-sirene/3.11/siret?q=codePostalEtablissement:59* AND (denominationUniteLegale:DENT* OR nomUniteLegale:DENT*)&nombre=1000";
 
     const res = await fetch(url, {
       headers: {
